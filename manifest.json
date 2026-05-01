@@ -1,0 +1,11 @@
+{
+  "name": "Gas Converter",
+  "short_name": "GasConverter",
+  "description": "Gas Converter",
+  "lang": "en-US",
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
