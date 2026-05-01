@@ -10,7 +10,7 @@ print('Enter the price per gallon for US gasoline: ')
 usPrice = float(input())
 
 if usPrice == 0:
-    print('Enter the price per gallon for Canadian gasoline: ')
+    print('Enter the price per litre for Canadian gasoline: ')
     cdnPrice = float(input())
 
 if usPrice == 0 and cdnPrice == 0:
