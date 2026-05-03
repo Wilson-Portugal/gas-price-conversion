@@ -4,7 +4,7 @@
   "description": "Gas Converter",
   "lang": "en-US",
   "orientation": "portrait",
-  "start_url": "index.html",
+  "start_url": "/gas-price-conversion/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff"
