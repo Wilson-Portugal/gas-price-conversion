@@ -6,7 +6,7 @@ This project solves a recurring problem for cross-border travel: comparing fluct
 
 ## Changes
 
-version 1.22 - I have added functionality with a **Clear** button. I am trying to streamline the calculations.
+version 1.2 - I have added functionality with a **Clear** button. I am trying to streamline the calculations.
 
 ## The Problem
 > I buy gasoline in the USA once a week. The price has been fluctuating. I know the conversion between US gallon and a litre. I see the exchange rate on my credit card. I would like to be able to plug in the Canadian price and have it give me the equivalent US price, and vice versa. 
