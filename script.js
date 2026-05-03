@@ -13,14 +13,19 @@ window.onload = function() {
     }
 };
 
-function calculate(event) {
-    // Prevent the page from refreshing on form submit
-    if (event) event.preventDefault();
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        clearForm();
+    } else if (event.key === "Enter") {
+        calculate();
+    }
+});
 
+function calculate() {
     var volumeConversion = 3.785;
-    var usInput = document.getElementById("usPrice");
-    var cdnInput = document.getElementById("cdnPrice");
-    var rateInput = document.getElementById("exchangeRate");
+    var usInput = ele_usPrice();
+    var cdnInput = ele_cdnPrice();
+    var rateInput = ele_exchangeRate();
 
     var usPrice = usInput.value;
     var cdnPrice = cdnInput.value;
@@ -41,4 +46,30 @@ function calculate(event) {
     } else {
         alert("Please enter a price and the exchange rate.");
     }
+}
+
+function clearForm() {
+    var usInput = ele_usPrice();
+    var cdnInput = ele_cdnPrice();
+
+    usInput.value = "";
+    usInput.classList.remove("calculated-field");
+    cdnInput.value = "";
+    cdnInput.classList.remove("calculated-field");
+
+    usInput.focus();
+}
+
+// form elements for simplification of code
+
+function ele_usPrice() {
+    return document.getElementById('usPrice');
+}
+
+function ele_cdnPrice() {
+    return document.getElementById('cdnPrice');
+}
+
+function ele_exchangeRate() {
+    return document.getElementById('exchangeRate');
 }

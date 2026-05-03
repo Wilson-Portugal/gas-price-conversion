@@ -13,26 +13,24 @@
 <body>
     <h1>Gas Purchases</h1>
     <div class="content">
-        <!-- The onsubmit handles the Enter/Go key -->
-        <form onsubmit="calculate(event)">
-            <div class="input-group">
-                <label for="usPrice">US Price per Gallon ($)</label>
-                <input type="number" id="usPrice" step="0.001" placeholder="0.000" autofocus />
-            </div>
+        <div class="input-group">
+            <label for="usPrice">US Price per Gallon ($)</label>
+            <input type="number" id="usPrice" step="0.001" placeholder="0.000" autofocus />
+        </div>
 
-            <div class="input-group">
-                <label for="cdnPrice">Canada Price per Litre ($)</label>
-                <input type="number" id="cdnPrice" step="0.001" placeholder="0.000" />
-            </div>
+        <div class="input-group">
+            <label for="cdnPrice">Canada Price per Litre ($)</label>
+            <input type="number" id="cdnPrice" step="0.001" placeholder="0.000" />
+        </div>
 
-            <div class="input-group">
-                <label for="exchangeRate">Exchange Rate (1 USD = X CAD)</label>
-                <input type="number" id="exchangeRate" step="0.0001" placeholder="1.4200" required />
-            </div>
+        <div class="input-group">
+            <label for="exchangeRate">Exchange Rate (1 USD = X CAD)</label>
+            <input type="number" id="exchangeRate" step="0.0001" placeholder="1.0000" required />
+        </div>
 
-            <!-- Changing this to type="submit" enables the keyboard GO button -->
-            <button type="submit">Calculate</button>
-        </form>
+        <button onclick="calculate()">Calculate</button>
+
+        <button onclick="clearForm()">Clear</button>
     </div>
 </body>
 
