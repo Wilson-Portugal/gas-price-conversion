@@ -12,20 +12,45 @@ body {
     color: var(--text-dark);
 }
 
-h1 {
-    margin: 0;
-    padding: 20px 10px;
-    text-align: center;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: var(--primary-blue);
     color: white;
-    font-size: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.content {
+header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    box-shadow: none; /* Removed the old H1 shadow since it's in a header now */
+}
+
+#app_ver {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-family: monospace; /* Gives it that "terminal/versioning" look */
+}
+
+div.content {
     max-width: 500px;
     margin: 20px auto;
     padding: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 40px;
+}
+
+#copyright_year {
+    display: inline; /* Keeps it on the same line as "Copyright" */
+    font-weight: bold;
 }
 
 /* Container for each input group */

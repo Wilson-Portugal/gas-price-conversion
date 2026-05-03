@@ -3,6 +3,8 @@ if ('serviceWorker' in navigator) {
     .then(() => console.log("Service Worker Registered"));
 }
 
+const appVersion = 'v1.2'; // Matches your sw.js cacheName
+
 // ... your existing window.onload and calculate functions ...
 
 // Run this when the page loads
@@ -20,6 +22,18 @@ window.onload = function() {
         // Trigger your new state-aware calculation logic
         calculate(); 
     });
+
+    document.getElementById("app_ver").innerHTML = appVersion;
+
+    const baseYear = 2026;
+    const currentYear = new Date().getFullYear();
+    let copyrightYear = currentYear;
+    
+    if (currentYear > baseYear) {
+        copyrightYear = baseYear + "-" + currentYear;
+    }
+    
+    document.getElementById("copyright_year").innerHTML = copyrightYear;
 };
 
 document.addEventListener("keydown", function(event) {
