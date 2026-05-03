@@ -1,8 +1,12 @@
 # Gas Price Converter
 
-![App Screenshot](Screenshot_20260501_163853_Chrome.jpg)
+![App Screenshot](Screenshot_20260503_121852_Chrome.jpg)
 
 This project solves a recurring problem for cross-border travel: comparing fluctuating gas prices between the USA and Canada without incurring high roaming charges.
+
+## Changes
+
+version 1.22 - I have added functionality with a **Clear** button. I am trying to streamline the calculations.
 
 ## The Problem
 > I buy gasoline in the USA once a week. The price has been fluctuating. I know the conversion between US gallon and a litre. I see the exchange rate on my credit card. I would like to be able to plug in the Canadian price and have it give me the equivalent US price, and vice versa. 

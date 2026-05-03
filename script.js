@@ -11,12 +11,22 @@ window.onload = function() {
     if (savedRate) {
         document.getElementById("exchangeRate").value = savedRate;
     }
+
+    // Add this to your window.onload function
+    ele_exchangeRate().addEventListener("input", function() {
+        // Save the rate to storage as they type
+        localStorage.setItem("lastExchangeRate", this.value);
+        
+        // Trigger your new state-aware calculation logic
+        calculate(); 
+    });
 };
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         clearForm();
     } else if (event.key === "Enter") {
+        event.preventDefault(); // Stop any browser default behaviour
         calculate();
     }
 });
@@ -31,20 +41,27 @@ function calculate() {
     var cdnPrice = cdnInput.value;
     var exchangeRate = rateInput.value;
 
-    // Clear previous highlights
-    usInput.classList.remove("calculated-field");
-    cdnInput.classList.remove("calculated-field");
+    // Logic: Which field is currently the "Calculated" one?
+    var isCdnCalculated = cdnInput.classList.contains("calculated-field");
+    var isUsCalculated = usInput.classList.contains("calculated-field");
 
-    if (usPrice && exchangeRate) {
-        var result = (usPrice / volumeConversion) * exchangeRate;
-        cdnInput.value = result.toFixed(3);
-        cdnInput.classList.add("calculated-field");
-    } else if (cdnPrice && exchangeRate) {
-        var result = (cdnPrice * volumeConversion) / exchangeRate;
-        usInput.value = result.toFixed(3);
-        usInput.classList.add("calculated-field");
-    } else {
-        alert("Please enter a price and the exchange rate.");
+    if (exchangeRate > 0) {
+        // If US was entered by the user (or was the last master), update CAD
+        if (usPrice && (!isUsCalculated || isCdnCalculated)) {
+            var result = (usPrice / volumeConversion) * exchangeRate;
+            cdnInput.value = result.toFixed(3);
+            
+            usInput.classList.remove("calculated-field");
+            cdnInput.classList.add("calculated-field");
+        } 
+        // If CAD was the master, update US
+        else if (cdnPrice) {
+            var result = (cdnPrice * volumeConversion) / exchangeRate;
+            usInput.value = result.toFixed(3);
+            
+            cdnInput.classList.remove("calculated-field");
+            usInput.classList.add("calculated-field");
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-const cacheName = 'gas-calc-v1.1';
+const cacheName = 'gas-calc-v1.2';
 const assets = [
   './',
   './index.html',
