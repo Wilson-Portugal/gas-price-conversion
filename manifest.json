@@ -1,19 +1,19 @@
 {
-  "name": "Gas Converter",
-  "short_name": "GasConverter",
-  "description": "Gas Converter",
-  "lang": "en-US",
-  "orientation": "portrait",
-  "start_url": "/gas-price-conversion/index.html",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "icons": [
-      {
-          "src": "logo.svg",
-          "sizes": "any",
-          "type": "image/svg+xml",
-          "purpose": "any"
-      }
-  ]
+    "name": "Gas Price Conversion",
+    "short_name": "GasPriceConversion",
+    "description": "Gas Price Conversion",
+    "lang": "en-US",
+    "orientation": "portrait",
+    "start_url": "/gas-price-conversion/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "logo.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
 }
