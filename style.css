@@ -14,9 +14,10 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    gap: 15px;
+    padding: 1rem;
     background-color: var(--primary-blue);
     color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -26,6 +27,11 @@ header h1 {
     margin: 0;
     font-size: 1.3rem;
     box-shadow: none; /* Removed the old H1 shadow since it's in a header now */
+}
+
+header img {
+    width: 50px; /* Scaled down so it's not overpowering */
+    height: 50px;
 }
 
 #app_ver {

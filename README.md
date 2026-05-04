@@ -1,6 +1,6 @@
 # Gas Price Converter
 
-<img src="Screenshot_20260503_121852_Chrome.jpg" alt="App Screenshot" style="width:300px;height:auto;">
+<img src="Screenshot_20260503_210152_Chrome.jpg" alt="App Screenshot" style="width:300px;height:auto;">
 
 This project solves a recurring problem for cross-border travel: comparing fluctuating gas prices between the USA and Canada without incurring high roaming charges.
 
