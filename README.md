@@ -1,6 +1,6 @@
 # Gas Price Converter
 
-<img src="Screenshot_20260503_210152_Chrome.jpg" alt="App Screenshot" style="width:300px;height:auto;">
+<img src="Screenshot_20260503_213817_Chrome.jpg" alt="App Screenshot" style="width:300px;height:auto;">
 
 This project solves a recurring problem for cross-border travel: comparing fluctuating gas prices between the USA and Canada without incurring high roaming charges.
 
@@ -28,7 +28,7 @@ To make this a "real" app, I implemented several advanced features:
 ## Technical Environment
 *   **Development Server:** Hosted on a **Raspberry Pi 5** within a local network.
 *   **Collaboration:** Developed in collaboration with **Gemini AI**, which assisted with CSS refinement and PWA implementation.
-*   **Testing:** Tested on **Android 14** using the **Chrome** browser.
+*   **Testig:** Tested on **Android 14** using the **Chrome** browser.
 
 ## How to Use
 1. Access the app via the local network IP.
