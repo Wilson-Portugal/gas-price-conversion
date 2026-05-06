@@ -3,7 +3,9 @@ if ('serviceWorker' in navigator) {
     .then(() => console.log("Service Worker Registered"));
 }
 
-const appVersion = 'v1.2'; // Matches your sw.js cacheName
+// this line now exists in your /var/www/html/gas-price-conversion/config-app-version.php file
+// and is loaded  in your builder/app.php script into your index.html code
+// const appVersion = 'v1.2'; // Matches your sw.js cacheName
 
 // ... your existing window.onload and calculate functions ...
 
@@ -77,6 +79,11 @@ function calculate() {
             usInput.classList.add("calculated-field");
         }
     }
+}
+
+function calculateButton() {
+    calculate();
+    document.activeElement.blur();
 }
 
 function clearForm() {

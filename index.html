@@ -1,13 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#0056b3">
+    <meta name="description" content="Gas Price Converter">
+    <meta name="author" content="Wilson Portugal">
+    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gas Price Converter</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script type="text/javascript">const appVersion='v1.2.2.1';</script><script type="text/javascript">if("serviceWorker"in navigator){navigator.serviceWorker.register("./sw.js").then(()=>console.log("Service Worker Registered"))}window.onload=function(){const savedRate=localStorage.getItem("lastExchangeRate");if(savedRate){document.getElementById("exchangeRate").value=savedRate}ele_exchangeRate().addEventListener("input",function(){localStorage.setItem("lastExchangeRate",this.value);calculate()});document.getElementById("app_ver").innerHTML=appVersion;const baseYear=2026;const currentYear=(new Date).getFullYear();let copyrightYear=currentYear;if(currentYear>baseYear){copyrightYear=baseYear+"-"+currentYear}document.getElementById("copyright_year").innerHTML=copyrightYear};document.addEventListener("keydown",function(event){if(event.key==="Escape"){clearForm()}else if(event.key==="Enter"){event.preventDefault();calculate()}});function calculate(){var volumeConversion=3.785;var usInput=ele_usPrice();var cdnInput=ele_cdnPrice();var rateInput=ele_exchangeRate();var usPrice=usInput.value;var cdnPrice=cdnInput.value;var exchangeRate=rateInput.value;var isCdnCalculated=cdnInput.classList.contains("calculated-field");var isUsCalculated=usInput.classList.contains("calculated-field");if(exchangeRate>0){if(usPrice&&(!isUsCalculated||isCdnCalculated)){var result=usPrice/volumeConversion*exchangeRate;cdnInput.value=result.toFixed(3);usInput.classList.remove("calculated-field");cdnInput.classList.add("calculated-field")}else if(cdnPrice){var result=cdnPrice*volumeConversion/exchangeRate;usInput.value=result.toFixed(3);cdnInput.classList.remove("calculated-field");usInput.classList.add("calculated-field")}}}function calculateButton(){calculate();document.activeElement.blur()}function clearForm(){var usInput=ele_usPrice();var cdnInput=ele_cdnPrice();usInput.value="";usInput.classList.remove("calculated-field");cdnInput.value="";cdnInput.classList.remove("calculated-field");usInput.focus()}function ele_usPrice(){return document.getElementById("usPrice")}function ele_cdnPrice(){return document.getElementById("cdnPrice")}function ele_exchangeRate(){return document.getElementById("exchangeRate")}</script>
+    <style type="text/css">:root {--primary-blue:#0056b3;--bg-gray:#f4f7f6;--text-dark:#333;} body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin:0;padding:0;background-color:var(--bg-gray);color:var(--text-dark);} header {display:flex;justify-content:center;align-items:center;gap:15px;padding:1rem;background-color:var(--primary-blue);color:white;box-shadow:0 2px 4px rgba(0,0,0,0.1);} header h1 {margin:0;font-size:1.3rem;box-shadow:none;} header img {width:50px;height:50px;} #app_ver {font-size:0.8rem;opacity:0.8;font-family:monospace;} div.content {max-width:500px;margin:20px auto;padding:15px;} footer {text-align:center;padding:20px;font-size:0.85rem;color:#888;margin-top:40px;} #copyright_year {display:inline;font-weight:bold;} .input-group {background:white;padding:15px;margin-bottom:15px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);display:flex;flex-direction:column;} label {font-weight:bold;margin-bottom:8px;font-size:0.9rem;color:#666;} input[type="number"] {padding:12px;border:1px solid #ddd;border-radius:5px;font-size:1.1rem;width:100%;box-sizing:border-box;} button {width:100%;padding:15px;background-color:var(--primary-blue);color:white;border:none;border-radius:8px;font-size:1.1rem;font-weight:bold;cursor:pointer;transition:background-color 0.2s;margin-top:10px;} button:active {background-color:#003d7a;} input:focus {outline:none;border:2px solid var(--primary-blue);background-color:#e8f0fe;} .calculated-field {background-color:#d4edda !important;border:1px solid #c3e6cb;transition:background-color 0.5s ease;}</style>
 </head>
 
 <body>
@@ -21,24 +26,21 @@
             <label for="usPrice">US Price per Gallon ($)</label>
             <input type="number" id="usPrice" step="0.001" inputmode="decimal" placeholder="0.000" autofocus />
         </div>
-
         <div class="input-group">
-            <label for="cdnPrice">Canada Price per Litre ($)</label>
+            <label for="cdnPrice">Canadian Price per Litre ($)</label>
             <input type="number" id="cdnPrice" step="0.001" inputmode="decimal" placeholder="0.000" />
         </div>
-
         <div class="input-group">
             <label for="exchangeRate">Exchange Rate (1 USD = X CAD)</label>
-            <input type="number" id="exchangeRate" step="0.0001" inputmode="decimal" placeholder="1.0000" required />
+            <input type="number" id="exchangeRate" step="0.0001" inputmode="decimal" placeholder="0.0000" required />
         </div>
-
-        <button onclick="calculate()">Calculate</button>
-
-        <button onclick="clearForm()">Clear</button>
+        <button onclick="calculateButton();">Calculate</button>
+        <button onclick="clearForm();">Clear</button>
     </div>
     <footer>
         Copyright &#169; <div id="copyright_year"></div> Wilson Portugal
     </footer>
+    </div>
 </body>
 
 </html>
