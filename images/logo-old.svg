@@ -1,0 +1,43 @@
+<svg 
+    width="100" 
+    height="100" 
+    viewBox="0 0 100 100" 
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+        <path id="textCurve" d="M 15,50 A 35,35 0 0,1 85,50" />
+    </defs>
+
+    <!-- Circular Background -->
+    <circle id="circle" cx="50" cy="50" r="48" fill="#f4f7f6" stroke="#0056b3" stroke-width="2" />
+
+    <!-- The Bridge Arch -->
+    <path d="M20 70 Q50 20 80 70" fill="none" stroke="#0056b3" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Left Side: US Symbol (Star) -->
+    <path d="M20 75 L23 68 L30 68 L25 63 L27 56 L20 60 L13 56 L15 63 L10 68 L17 68 Z" fill="blue" transform="rotate(180, 20, 65)" />
+
+    <!-- Right Side: Canada Symbol (Leaf) -->
+    <path d="M80 75 L85 65 L90 67 L85 55 L80 57 L75 55 L70 67 L75 65 Z" fill="#ed2323" transform="rotate(180, 80, 65)" />
+
+    <!-- NEW: Gas Pump Outline (Centered) -->
+    <g transform="translate(42, 62) scale(0.8)" opacity="0.7">
+        <!-- Pump Body -->
+        <rect x="0" y="5" width="16" height="24" rx="2" fill="none" stroke="#333" stroke-width="2"/>
+        <!-- Display Screen -->
+        <rect x="3" y="8" width="10" height="6" rx="1" fill="#d4edda" stroke="#333" stroke-width="1"/>
+        <!-- Hose & Nozzle -->
+        <path d="M16 12 Q22 12 22 20 T18 28" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Center Accent: Success Node -->
+    <!-- <circle cx="50" cy="35" r="5" fill="#d4edda" stroke="#0056b3" stroke-width="1" /> -->
+
+    <!-- Curved Text -->
+    <text font-family="'Segoe UI', Tahoma, sans-serif" font-weight="bold" fill="#333">
+        <textPath href="#textCurve" startOffset="50%" text-anchor="middle" font-size="6pt">
+            GAS PRICE CONVERSION
+        </textPath>
+    </text>
+</svg>
