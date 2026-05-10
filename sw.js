@@ -1,5 +1,5 @@
-const cacheName = "gas-calc-v1.3.3";
-const assets = ['./', './index.html', './manifest.json', './logo.svg'];
+const cacheName = "gas-calc-v1.3.4";
+const assets = ['./', './index.html', './manifest.json', './images/logo.svg'];
 
 self.addEventListener('install', e => {
     self.skipWaiting();
