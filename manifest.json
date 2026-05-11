@@ -4,14 +4,14 @@
     "description": "Gas Price Conversion",
     "lang": "en-US",
     "orientation": "portrait",
-    "start_url": "/gas-price-conversion/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
     "icons": [
         {
-            "src": "logo.svg",
-            "sizes": "any",
+            "src": "images/logo.svg",
+            "sizes": "192x192 512x512 any",
             "type": "image/svg+xml",
             "purpose": "any"
         }
